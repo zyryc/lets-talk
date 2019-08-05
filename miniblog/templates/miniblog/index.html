@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'miniblog/css/style.css' %}">
+<body class="w3-blue">
+<div class="w3-card-2  w3-white">
+<h6 class="w3-brand">Name |</h6>
+</div>
+<div >
+<div class="w3-margin">
+<div class=" w3-card-2 w3-round w3-white">
+<div class="w3-container ">
+<form method="post" action="{% url 'index' %}">
+{% csrf_token %}
+<p>
+<input type="text" id="posts" name="posts" placeholder="Write"><br><br>
+<input type="submit" value="Post" class="w3-btn w3-round-large w3-green">
+</p>
+</form>
+ </div>
+</div>
+</div>
+<br>
+{% if all_items %}
+{% for postz in all_items %}
+<div class="w3-margin">
+<div class=" w3-card-2 w3-round w3-white">
+<div class="w3-container ">
+<img class="w3-round w3-image">
+<h4>John Doe</h4>
+<hr>
+<p>
+          <p>{{ postz.posts }}</p>
+ </div>
+</div>
+</div>
+{% endfor %}
+{% endif %}
+</div>
+<div class="w3-container w3-white">
+  <small>Footer</small>
+</div>
+
+<script>
+
+
+</script>
+</body>
+</html>
+
