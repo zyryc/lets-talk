@@ -1,0 +1,16 @@
+{% extends 'miniblog/base.html' %}
+
+{% block content %}
+<div class="w3-margin">
+<div class=" w3-card-2 w3-round w3-white">
+<div class="w3-container ">
+    <h2>New post</h2>
+    <form method="POST" class="post-form">
+    {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="w3-btn w3-btn-green">Save</button>
+    </form>
+    </div>
+    </div>
+    </div>
+{% endblock %}
